@@ -52,18 +52,12 @@ sig_inorm, ir_inorm = hp.norm_signals(sig_i, ir_i)
 upsampled_sig1, sig2, upsamp_factor = hp.upsample(sig_inorm, sig_ifs, ir_inorm, ir_ifs)
 
 """ 4. CONVOLVE! """
-wet_sig_L = signal.convolve(upsampled_sig1[:,0], sig2[:,0], mode='full', method='auto')
-wet_sig_R = signal.convolve(upsampled_sig1[:,1], sig2[:,1], mode='full', method='auto')
-wet_sig = np.stack((wet_sig_L, wet_sig_R), axis = -1)
-
-# figure()
-# plt.plot(wet_sig[:,0], label = "wet sig stereo");
-# plt.plot(upsampled_sig1[:,0]);
-# plt.plot(sig2[:,0]);
-# plt.title("Normalized Convolution");
-# plt.xlabel("Samples");
-# plt.ylabel("Amplitude");
-# plt.legend(["Convolved (wet)", "sig1", "sig 2"])
+def convolveit(sig1, sig2):
+    wet_sig_L = signal.convolve(sig1[:,0], sig2[:,0], mode='full', method='auto')
+    wet_sig_R = signal.convolve(sig1[:,1], sig2[:,1], mode='full', method='auto')
+    wet_sig = np.stack((wet_sig_L, wet_sig_R), axis = -1)
+    return wet_sig
+wet_sig = convolveit(upsampled_sig1, sig2)
 
 """ 5. POST-CONVOLUTION NORMALIZATION """
 wet_sig = wet_sig/np.max(np.abs(wet_sig)) * np.max(upsampled_sig1)
@@ -71,12 +65,25 @@ wet_sig = wet_sig/np.max(np.abs(wet_sig)) * np.max(upsampled_sig1)
 """ 5B. IF DIFF: DOWNSAMPLING IF DIFF (hardcoded to be 2)"""
 wet_sig_ds = [wet_sig[i] for i in range(len(wet_sig)) if i % upsamp_factor== 0]
 wet_sig_ds = np.asarray(wet_sig_ds)
+# print(len(wet_sig_ds))
+# print(len(sig_inorm))
+
+def downsampif(upsamp_factor, sig):
+    if upsamp_factor != 1: #&is 2
+        wet_sig_ds = [sig[i] for i in range(len(sig)) if i % upsamp_factor== 0]
+        wet_sig_ds = np.asarray(wet_sig_ds)
+    else:
+        wet_sig_ds = wet_sig
+    return wet_sig_ds
 
 """ 5c. zero padding"""
-shape = np.shape(sig_inorm)
-drysig_padded = np.stack((np.zeros((len(wet_sig_ds))), np.zeros((len(wet_sig_ds)))), axis = -1)
-drysig_padded[:,0][:shape[0]] = sig_inorm[:,0] #dry sig is padded data_in
-drysig_padded[:,1][:shape[0]] = sig_inorm[:,1] #dry sig is padded data_in
+def padit(smaller, pad_sig_to):
+    shape = np.shape(smaller)
+    drysig_padded = np.stack((np.zeros((len(pad_sig_to))), np.zeros((len(pad_sig_to)))), axis = -1)
+    drysig_padded[:,0][:shape[0]] = smaller[:,0] #dry sig is padded data_in
+    drysig_padded[:,1][:shape[0]] = smaller[:,1] #dry sig is padded data_in
+    return drysig_padded
+drysig_padded = padit(sig_inorm, wet_sig_ds)
 
 """ 6. MIXING """
 wetvsdry = 0.3 #change 1 knob to 2 knobs?
@@ -91,6 +98,7 @@ mix = sa.play_buffer(mixed_int, 2, 2, fs_in)
 wet = sa.play_buffer(wet_sig_int, 2, 2, fs_in)
 # dry = sa.play_buffer(data_in, 1, 2, fs_in)
 
-""" 8b. visualize brUH why wont you work"""
-# x = hp.signal_comparison(data_in, drysig_padded, wet_sig_int, mixed_int, fs_in)
-# plt.plot(data_in)
+""" 8b. visualize"""
+x = hp.signal_comparison(data_in, drysig_padded, wet_sig_int, mixed_int, fs_in)
+
+
