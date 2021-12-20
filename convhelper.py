@@ -162,7 +162,7 @@ def downsampif(upsamp_factor, sig):
         wet_sig_ds = [sig[i] for i in range(len(sig)) if i % upsamp_factor== 0]
         wet_sig_ds = np.asarray(wet_sig_ds)
     else:
-        wet_sig_ds = wet_sig
+        wet_sig_ds = sig
     return wet_sig_ds
 
 def padit(smaller, pad_sig_to):

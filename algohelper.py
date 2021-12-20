@@ -9,9 +9,7 @@ import math
 
 def comb(x_n, g, d):
     # x_n is numpy array of initial samples
-    y_n = np.zeros(len(x_n));
-    y_n0 = np.zeros(len(x_n)); 
-    y_n1 = np.zeros(len(x_n));
+    y_n = np.zeros(len(x_n))
     if type(d) == int:
         for i in range(len(x_n)):
             if i-d < 0:
@@ -26,7 +24,7 @@ def comb(x_n, g, d):
             if i-d < 0:
                 y_n[i] = x_n[i]
             else:
-                y_n[i] = x_nexit[i] + g*y_mid
+                y_n[i] = x_n[i] + g*y_mid
                 
             
                 print(F" n = {i} | d = {d} | n-d = {i-d}")
@@ -138,7 +136,7 @@ def lp_comb(x_n, g, d, sg):
 ---------- FREEVERB CLASS  -------------
 """ 
 
-class new_fverb:
+class Freeverb:
     def __init__(self, comb_g, comb_sg, comb_d, ap_g, ap_d, x_g):
         self.comb_g = comb_g
         self.comb_sg = comb_sg
@@ -211,7 +209,11 @@ class new_fverb:
     def norm_mix(self):
         Lmix, Rmix = self.raw_mix()
         Lmix_norm = np.int16(Lmix/np.max(np.abs(Lmix)) * 32767)
+        #Lmix_norm = np.int16(Lmix/np.max(np.abs(Lmix)* np.max(self.x)) * 32767)
+
         Rmix_norm = np.int16(Rmix/np.max(np.abs(Rmix)) * 32767)
+        #Rmix_norm = np.int16(Rmix/np.max(np.abs(Rmix)* np.max(self.x)) * 32767)
+
         return Lmix_norm, Rmix_norm
     
     def out_mix(self):
