@@ -223,6 +223,8 @@ class Freeverb:
     '''
     TEST BENCHES
     '''
+    def __repr__(self): 
+        return "Test combd:% s" % (self.comb_d) 
     def test_scale_delays(self):
         cd, apd, right_d = self.scale_delays()
         print(f"scaling fs = {self.scale_fs}")

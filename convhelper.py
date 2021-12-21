@@ -12,6 +12,8 @@ from scipy.interpolate import interp1d
 import math
 import utility
 import os
+import random
+
 
 """FUNCTION: display_data() -- checking data contents (mono vs stereo)
 take in local filename (ex. 'CantinaBand3.wav', not '../.../XYZ/CantinaBand3.wav'
@@ -70,6 +72,7 @@ def match_fs(input_fs, IR_fs, input_sig, IR):
     upsamp_data = 0;
     baseline = 0;
     data_name = 0;
+    # print(input_fs, IR_fs)
     if input_fs > IR_fs: #if samp rate of data is greater than samp rate of IR, take reciprocal
         upsamp = 1/upsamp;
         upsamp_data = IR;
@@ -101,30 +104,30 @@ def upsample(sig1, sig1_fs, sig2, sig2_fs, showgraphs = False):
     upsamp, up_data, up_dataname, baseline_data = match_fs(sig1_fs, sig2_fs, sig1, sig2)
     
     k = np.arange(len(up_data))
-    print(f"k = {k}")
-    print(f"up_data[:,0] = {up_data[:,0]}")
+    # print(f"k = {k}")
+    # print(f"up_data[:,0] = {up_data[:,0]}")
 
     #inserting zeros in between original sample
     n = up_data.shape
     size = n[0]
     zeroed = np.zeros(upsamp*size, dtype = float)
-    print(f"zeros = {zeroed}")
+    # print(f"zeros = {zeroed}")
     zeroed = np.stack((zeroed, zeroed), axis = -1)
     zeroed[:,0][::upsamp] = up_data[:,0]
-    print(f"updata[:,0] = {up_data[:,0]} ")
+    # print(f"updata[:,0] = {up_data[:,0]} ")
     zeroed[:,1][::upsamp] = up_data[:,1]
-    print(f"zeroed inserted = {zeroed}")
+    # print(f"zeroed inserted = {zeroed}")
     k_up = np.arange(len(zeroed))
-    print(k_up)
+    # print(k_up)
     # print(k_up[zeroed[0]!=0])
 
     #upsampling & interpolation
     interp_L = np.interp(k_up, k_up[zeroed[:,0]!=0], zeroed[:,0][zeroed[:,0]!=0])
     interp_R = np.interp(k_up, k_up[zeroed[:,1]!=0], zeroed[:,1][zeroed[:,1]!=0])
     data_interp = np.stack((interp_L, interp_R) , axis = -1)
-    print(f"New Upsamp&Interp Data = {data_interp}, upsamp factor = {upsamp}" )
+    # print(f"New Upsamp&Interp Data = {data_interp}, upsamp factor = {upsamp}" )
 
-    print(data_interp.dtype)
+    # print(data_interp.dtype)
     if showgraphs==True:
         plt.figure() #original signal
         plt.plot(k,up_data)
@@ -201,3 +204,12 @@ def signal_comparison(dry, dry_pad, wet, mixed, fs_in):
     plt.ylabel("Amplitude");
     plt.title(f"Dry vs Mixed: Time Comparison | G_w = ");
 
+def pick_file(filename):
+    return filename
+    # Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
+    # filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
+    # print(filename)
+    # if os.path.isdir(folder):
+    #     return random.choice(os.listdir(folder))
+    # else:
+    #     return 'Not valid folder'
