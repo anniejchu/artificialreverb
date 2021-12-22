@@ -1,8 +1,4 @@
 # Artificial Reverb Generator
-Annie Chu _(Olin College of Engineering)_
-
-**IS Advisor** Prof. Andrew Davis _(Wellesley College)_
-
 
 <img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_conv.png" alt="conv" width="800"/>
 <img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_algo.png" alt="algo" width="800"/>
@@ -58,3 +54,8 @@ To execute the program, run Terminal command
 - [McGill Audio Samples](http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Samples.html)
 - [UIC Audio Samples](https://www2.cs.uic.edu/~i101/SoundFiles/)
 - [utility.py](http://nbviewer.org/github/mgeier/python-audio/blob/master/audio-files/utility.py)
+
+## Authors
+Annie Chu | Olin College of Engineering
+
+**IS Advisor:** Prof. Andrew Davis | Wellesley College
