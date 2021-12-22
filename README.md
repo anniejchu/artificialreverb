@@ -14,24 +14,24 @@ Algorithmic reverb uses a network of mathematically-defined filters, delay lines
 The user first chooses which artificial reverb type they want by tab selection: Convolution or Algorithmic.
 In each, the following are offered:
 
-**Configuration Options**
+### Configuration Options
 
-BOTH Convolution & Algorithmic
+#### BOTH Convolution & Algorithmic
 - Audio Input (.wav file)
     - 3 x Preset .wav files
     - User's choice: local .wav file
 - Mix Amount (amount of wet to dry signal in the final mix)
 
-Convolution
+#### Convolution
 - Impulse Response
-    - Classroom, Hallway, Computer Lab (*impulse responses recorded at Wellesley College via balloon popping)
+    - Classroom, Hallway, Computer Lab (*impulse responses recorded at Wellesley College)
 
-Algorithmic
+#### Algorithmic
 - Algorithm: Schroeder or Freeverb
     - 2 x Preset Algorithms: Schroeder Preset, Freeverb Preset
     - Option to customize: Custom Schroeder, Custom Freeverb
 
-**Output Options**
+### Output Options
 - REVERB IT => plays output mix 
 - DOWNLOAD => download output mix as a .wav file
 - PLOT => plots comparison between original audio and output mix
@@ -39,16 +39,14 @@ Algorithmic
 ## Requirements
 To install all required packages, run
 
-'''
-pip install -r requirements.txt
-'''
+<code>pip install -r requirements.txt</code>
 
 ## Running the Program
 To execute the program, run Terminal command
 
-'''
-python MAINFRAME.py
-''' 
+
+<code>python MAINFRAME.py</code>
+
 
 ## References
 [Stanford CCRMA Reverb Material](https://ccrma.stanford.edu/~jos/Reverb/)
