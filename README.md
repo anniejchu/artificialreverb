@@ -11,8 +11,12 @@ Convolution reverb uses digital recordings of an existing space's impulse respon
 Algorithmic reverb uses a network of mathematically-defined filters, delay lines, gains, etc to simulate a reveberant space. This allows for much more flexibility and customization as its non-reliant of an impulse response of an existing physical space. 
 
 ## Program Features
+Below are some program screengrabs!
+
+<img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_conv.png" alt="conv" width="600"/>
+<img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_algo.png" alt="algo" width="600"/>
+
 The user first chooses which artificial reverb type they want by tab selection: Convolution or Algorithmic.
-In each, the following are offered:
 
 ### Configuration Options
 
@@ -49,6 +53,6 @@ To execute the program, run Terminal command
 
 
 ## References
-[Stanford CCRMA Reverb Material](https://ccrma.stanford.edu/~jos/Reverb/)
-[McGill Audio Samples](http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Samples.html)
-[UIC Audio Samples](https://www2.cs.uic.edu/~i101/SoundFiles/)
+-[Stanford CCRMA Reverb Material](https://ccrma.stanford.edu/~jos/Reverb/)
+-[McGill Audio Samples](http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Samples.html)
+-[UIC Audio Samples](https://www2.cs.uic.edu/~i101/SoundFiles/)

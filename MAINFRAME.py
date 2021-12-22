@@ -147,7 +147,7 @@ alg_options_customS = [[sg.Frame('Custom: Schroeder', layout_ALG_Scustom)]]
 conv_layout = [[sg.Column(conv_options_FRAME, element_justification='l', vertical_alignment='top'), sg.VSeparator(),sg.Column(conv_buttons_FRAME, element_justification='r', vertical_alignment='top')]]
 alg_layout = [[sg.Column(alg_options_FRAME, element_justification='l', vertical_alignment='top',s=(350,600)), sg.VSeparator(),sg.Column(alg_options_customS, vertical_alignment='top', element_justification='r',s=szcol),sg.VSeparator(),sg.Column(alg_options_customF, element_justification='r', s=szcol),sg.VSeparator(),sg.Column(alg_buttons_FRAME, element_justification='r',s=(300,600))]]
 
-layout = [[sg.Text('CAN YOU REVERB IT? YES YOU CAN', size = (40,1), justification='center', font=("Courier", 32), relief=sg.RELIEF_GROOVE, k='-TEXT HEADING-', enable_events=True)], [sg.Text('Annie Chu | Fall 2021 | Olin College')]]
+layout = [[sg.Text('Artificial Reverb Generator', size = (40,1), justification='center', font=("Courier", 32), relief=sg.RELIEF_GROOVE, k='-TEXT HEADING-', enable_events=True)], [sg.Text('Annie Chu | Fall 2021 | Olin College')]]
 layout +=[[sg.TabGroup([[  sg.Tab('Convolution', conv_layout),
                            sg.Tab('Algorithmic', alg_layout),
                               ]], key='-TAB GROUP-', size = (1200,600),enable_events=True)]]
