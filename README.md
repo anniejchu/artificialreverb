@@ -1,5 +1,6 @@
 # Artificial Reverb Generator
 Annie Chu | Olin College of Engineering
+
 Independent Study Advisor: Prof. Andrew Davis | Wellesley College
 
 ## Introduction
@@ -13,7 +14,7 @@ Algorithmic reverb uses a network of mathematically-defined filters, delay lines
 The user first chooses which artificial reverb type they want by tab selection: Convolution or Algorithmic.
 In each, the following are offered:
 
-Configuration Options
+**Configuration Options**
 
 BOTH Convolution & Algorithmic
 - Audio Input (.wav file)
@@ -30,19 +31,21 @@ Algorithmic
     - 2 x Preset Algorithms: Schroeder Preset, Freeverb Preset
     - Option to customize: Custom Schroeder, Custom Freeverb
 
-Output Options
+**Output Options**
 - REVERB IT => plays output mix 
 - DOWNLOAD => download output mix as a .wav file
 - PLOT => plots comparison between original audio and output mix
 
 ## Requirements
 To install all required packages, run
+
 '''
 pip install -r requirements.txt
 '''
 
 ## Running the Program
 To execute the program, run Terminal command
+
 '''
 python MAINFRAME.py
 ''' 
