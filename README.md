@@ -3,11 +3,10 @@ Annie Chu | Olin College of Engineering
 
 Independent Study Advisor: Prof. Andrew Davis | Wellesley College
 
+<img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_conv.png" alt="conv" width="800"/>
+<img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_algo.png" alt="algo" width="800"/>
+
 ## Introduction
-
-
-<img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_conv.png" alt="conv" width="700"/>
-<img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_algo.png" alt="algo" width="700"/>
 
 This program takes in a user's input .wav file and outputs a reverbed version of their choosing. The user has the ability to choose what type of reverb they would like -- Convolution vs Algorithmic. 
 
@@ -22,24 +21,24 @@ The user first chooses which artificial reverb type they want by tab selection: 
 ### Configuration Options
 
 #### BOTH Convolution & Algorithmic
-- Audio Input (.wav file)
-    - 3 x Preset .wav files
-    - User's choice: local .wav file
-- Mix Amount (amount of wet to dry signal in the final mix)
+> - Audio Input (.wav file)
+>    - 3 x Preset .wav files
+>    - User's choice: local .wav file
+> - Mix Amount (amount of wet to dry signal in the final mix)
 
 #### Convolution
-- Impulse Response
-    - Classroom, Hallway, Computer Lab (*impulse responses recorded at Wellesley College)
+> - Impulse Response
+>    - Classroom, Hallway, Computer Lab (*impulse responses recorded at Wellesley College)
 
 #### Algorithmic
-- Algorithm: Schroeder or Freeverb
-    - 2 x Preset Algorithms: Schroeder Preset, Freeverb Preset
-    - Option to customize: Custom Schroeder, Custom Freeverb
+> - Algorithm: Schroeder or Freeverb
+>     - 2 x Preset Algorithms: Schroeder Preset, Freeverb Preset
+>     - Option to customize: Custom Schroeder, Custom Freeverb
 
 ### Output Options
-- REVERB IT => plays output mix 
-- DOWNLOAD => download output mix as a .wav file
-- PLOT => plots comparison between original audio and output mix
+> - REVERB IT => plays output mix 
+> - DOWNLOAD => download output mix as a .wav file
+> - PLOT => plots comparison between original audio and output mix
 
 ## Requirements
 To install all required packages, run
