@@ -43,7 +43,7 @@ conv_options_FRAME= [[sg.Frame('Choose Your Input Audio',layout_input_audio)],
                  ]
 
 ############## UI SET UP RIGHT COLUMN: BUTTONS
-conv_buttons = [[sg.Cancel('Cancel'),sg.Button('Reset') ],
+conv_buttons = [[sg.Cancel('Exit'),sg.Button('Reset') ],
                 [sg.HorizontalSeparator()],
                 [sg.Text('Press REVERB IT \nto hear the reverbed version')],
                 [sg.Button('REVERB IT')],
@@ -122,7 +122,7 @@ layout_ALG_Scustom = [
         [sg.Text("Mix Amount")],
         [sg.Slider(orientation ='horizontal', key='mixamt_bs', range=(0,1), resolution=0.1, enable_events=True)],
 ]
-alg_buttons = [[sg.Cancel('Cancel', key='cancel_b'),sg.Button('Reset', key='reset_b') ],
+alg_buttons = [[sg.Cancel('Exit', key='Exit_b'),sg.Button('Reset', key='reset_b') ],
                 [sg.HorizontalSeparator()],
                 [sg.Text('Press REVERB IT \nto hear the reverbed version')],
                 [sg.Button('REVERB IT', key='reverb_b')],
@@ -225,7 +225,7 @@ def set_param_algo():
 ########## EVENT LOOP
 while True:
     event, values = window.read()
-    if event in ('Cancel', 'cancel_b', sg.WIN_CLOSED):
+    if event in ('Exit', 'Exit_b', sg.WIN_CLOSED):
         break
     # print(event, values) #for debugging
 

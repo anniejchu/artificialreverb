@@ -84,25 +84,37 @@ def convreverb(in_sig, in_IR, mixamt, playout = True):
         
     return fs_in, mixed_int, sig_i
 
+# ft = 'Silom'
+# fsz = 12
+SMALL_SIZE = 9
+MEDIUM_SIZE = 10
+BIGGER_SIZE = 12
+
+plt.rc('font', family='Arial')
+plt.rc('font', size=MEDIUM_SIZE)          # controls default text sizes
+plt.rc('axes', titlesize=MEDIUM_SIZE)     # fontsize of the axes title
+plt.rc('axes', labelsize=SMALL_SIZE)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
+plt.rc('figure', titlesize=BIGGER_SIZE) 
+
 def plotty(original, mixed, fs_in):
+    fig = plt.figure()
+    gs = fig.add_gridspec(2, hspace=0)
+    axs = gs.subplots(sharex=True, sharey=True)
+    fig.suptitle('Audio Comparison: Original vs Mixed', weight= 'bold')
     t_m = np.arange(0, len(mixed)/fs_in, (len(mixed)/fs_in)/len(mixed))
     t_o = np.arange(0, len(original)/fs_in, (len(original)/fs_in)/len(original))
-    plt.figure(1)
-    plt.suptitle("Dry vs Mixed Signals")
-    plt.subplot(211)
-    plt.plot(t_o,original, label = 'Dry Signal')
-    plt.xlim([0, max(t_m)])
-    plt.xlabel("Time(s)")
-    plt.ylabel("Amp")
-    plt.title("original")
-    plt.subplot(212)
-    plt.plot(t_m,mixed, label = 'Mixed Signal')  
-    plt.xlim([0, max(t_m)]) 
-    plt.xlabel("Time(s)")
-    plt.ylabel("Amp")
-    plt.title("mixed")
+    axs[0].set_title('Original', weight = 'bold')
+    axs[0].plot(t_o, original)
+    axs[1].set_title('Mixed', weight = 'bold')
+    axs[1].plot(t_m, mixed)
+    for ax in axs.flat:
+        ax.set(xlabel='Time (s)', ylabel='PCM Amplitude (int16)')
+    for ax in axs:
+        ax.label_outer()
     plt.show()
-
 
 # todo - USER INPUT
 input_sig1 = '/Users/anniechu/Documents/artificialreverb/samples/1CantinaBand3.wav' #mono
