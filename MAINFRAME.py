@@ -152,7 +152,7 @@ layout +=[[sg.TabGroup([[  sg.Tab('Convolution', conv_layout),
                            sg.Tab('Algorithmic', alg_layout),
                               ]], key='-TAB GROUP-', size = (1200,600),enable_events=True)]]
 
-window = sg.Window('test', layout, resizable = True,size = (1200, 1000))
+window = sg.Window('Artificial Reverb Generator', layout, resizable = True,size = (1200, 1000))
 
 def get_input():
     init = ''

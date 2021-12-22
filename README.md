@@ -4,6 +4,11 @@ Annie Chu | Olin College of Engineering
 Independent Study Advisor: Prof. Andrew Davis | Wellesley College
 
 ## Introduction
+
+
+<img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_conv.png" alt="conv" width="700"/>
+<img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_algo.png" alt="algo" width="700"/>
+
 This program takes in a user's input .wav file and outputs a reverbed version of their choosing. The user has the ability to choose what type of reverb they would like -- Convolution vs Algorithmic. 
 
 Convolution reverb uses digital recordings of an existing space's impulse response (IR) and convolves it with the original audio file, simulating what the original audio would sound like in that space. 
@@ -11,12 +16,8 @@ Convolution reverb uses digital recordings of an existing space's impulse respon
 Algorithmic reverb uses a network of mathematically-defined filters, delay lines, gains, etc to simulate a reveberant space. This allows for much more flexibility and customization as its non-reliant of an impulse response of an existing physical space. 
 
 ## Program Features
-Below are some program screengrabs!
 
-<img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_conv.png" alt="conv" width="600"/>
-<img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_algo.png" alt="algo" width="600"/>
-
-The user first chooses which artificial reverb type they want by tab selection: Convolution or Algorithmic.
+The user first chooses which artificial reverb type they want by tab selection: Convolution or Algorithmic. From there, the user has the following options.
 
 ### Configuration Options
 
