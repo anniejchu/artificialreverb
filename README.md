@@ -1,7 +1,13 @@
 # Artificial Reverb Generator
-Annie Chu | Olin College of Engineering
+###### Annie Chu 
 
-Independent Study Advisor: Prof. Andrew Davis | Wellesley College
+Olin College of Engineering
+
+###### Prof. Andrew Davis 
+
+Independent Study Advisor
+
+Wellesley College
 
 <img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_conv.png" alt="conv" width="800"/>
 <img src="https://github.com/anniejchu/artificialreverb/blob/main/images/tab_algo.png" alt="algo" width="800"/>
