@@ -282,22 +282,17 @@ class Schroeder:
     kind = 'schroeder'
     
     def __init__(self, gc, dc, gap, dap, gx):
-        
         self.gc = gc
         self.dc = dc
         self.gap = gap
         self.dap = dap
-    
         self.gx = gx
         self.x = 0
-        # self.yc_out = 0
-        # self.yap3 = 0
-        
+
     def scale_delays(self):
         s_comb_d = (self.scale_fs/44100)*np.array(self.dc)
         s_ap_d = (self.scale_fs/44100)*np.array(self.dap)
         return s_comb_d, s_ap_d
-    
     
     def apply_reverb(self, ch):
         if ch == "left":
@@ -336,4 +331,3 @@ class Schroeder:
         Lmix_norm, Rmix_norm = self.norm_mix()
         out_mix = np.stack((Lmix_norm, Rmix_norm), axis=-1)
         return out_mix
-        

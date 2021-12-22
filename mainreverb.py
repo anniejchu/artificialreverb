@@ -36,15 +36,9 @@ Preset_Schroeder = ahp.Schroeder(
 
 def artreverb(revclass, audiofile, playout = True):
     data, fs = hp.makestereo(audiofile)
-    print('passed data in')
     revclass.x = data
     revclass.scale_fs = fs
-    print('set datas into class')
-
     reverbed = revclass.out_mix()
-    print('mixed it right')
-
-    # plt.plot(reverbed)    
 
     if playout == True:
         if len(data.shape) == 2:
@@ -52,14 +46,6 @@ def artreverb(revclass, audiofile, playout = True):
         else:
             play_obj = sa.play_buffer(reverbed, 1, 2, fs)
     return fs, reverbed, data
-# custom_freeverb = ahp.Freeverb(
-#     0.2, #gc
-#    0.84, #sgc 
-#    [1557, 1617, 1491, 1422, 1277, 1356, 1188, 1116], #dc -- freeverb alg has typical 8 lpfb comb filters in parallel
-#    0.5, #gap 
-#    [225, 556, 441, 341],#dap -- freeverb alg has typical 4 all pass filters in series 
-#    0.1, 
-# )
 
 
 """
