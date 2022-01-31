@@ -43,7 +43,9 @@ To install all required packages, run
 <code>pip install -r requirements.txt</code>
 
 ## Running the Program
-To execute the program, 1) run Terminal command
+To execute the program, 
+
+1) run Terminal command
 
 
 <code>python MAINFRAME.py</code>
