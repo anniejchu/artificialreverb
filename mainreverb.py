@@ -117,10 +117,10 @@ def plotty(original, mixed, fs_in):
     plt.show()
 
 def findlocal(filename):
-    localpath = os.path.join(os.getcwd(), filename)
+    localpath = os.path.join(os.getcwd(), "samples", filename)
     return localpath
-# inputtest = 'hallway2.wav'
-# findlocal(inputtest)
+inputtest = 'hallway2.wav'
+findlocal(inputtest)
 
 # todo - USER INPUT
 input_sig1 = findlocal('1CantinaBand3.wav') #mono
