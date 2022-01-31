@@ -38,9 +38,7 @@ The user first chooses which artificial reverb type they want by tab selection: 
 > - PLOT => plots comparison between original audio and output mix
 
 ## Requirements
-1) Download the [**Samples**](https://github.com/anniejchu/artificialreverb/tree/main/samples) folder
-
-2) To install all required packages, run
+To install all required packages, run
 
 <code>pip install -r requirements.txt</code>
 
