@@ -48,6 +48,7 @@ To execute the program, run Terminal command
 
 <code>python MAINFRAME.py</code>
 
+Download the [**Samples**](https://github.com/anniejchu/artificialreverb/tree/main/samples) folder
 
 ## References
 - [Stanford CCRMA Reverb Material](https://ccrma.stanford.edu/~jos/Reverb/)
