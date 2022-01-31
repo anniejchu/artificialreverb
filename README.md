@@ -48,7 +48,6 @@ To execute the program, run Terminal command
 
 <code>python MAINFRAME.py</code>
 
-
 ## References
 - [Stanford CCRMA Reverb Material](https://ccrma.stanford.edu/~jos/Reverb/)
 - [McGill Audio Samples](http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Samples.html)
