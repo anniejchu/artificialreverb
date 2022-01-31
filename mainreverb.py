@@ -116,16 +116,22 @@ def plotty(original, mixed, fs_in):
         ax.label_outer()
     plt.show()
 
+def findlocal(filename):
+    localpath = os.path.join(os.getcwd(), filename)
+    return localpath
+# inputtest = 'hallway2.wav'
+# findlocal(inputtest)
+
 # todo - USER INPUT
-input_sig1 = '/Users/anniechu/Documents/artificialreverb/samples/1CantinaBand3.wav' #mono
-input_sig2 = '/Users/anniechu/Documents/artificialreverb/samples/2FrenchHorn.wav' #stereo
-input_sig3 = '/Users/anniechu/Documents/artificialreverb/samples/twochannel.wav'
+input_sig1 = findlocal('1CantinaBand3.wav') #mono
+input_sig2 = findlocal('2FrenchHorn.wav') #stereo
+input_sig3 = findlocal('twochannel.wav')
 in_presets = [input_sig1, input_sig2, input_sig3, 0]
 # -------- impulse response ------------
 # todo - USER INPUT
-IR_classroom = '/Users/anniechu/Documents/artificialreverb/samples/classroom5.wav'
-IR_hallway = '/Users/anniechu/Documents/artificialreverb/samples/hallway2.wav'
-IR_computerlab = '/Users/anniechu/Documents/artificialreverb/samples/computerlab3.wav'
+IR_classroom = findlocal('classroom5.wav')
+IR_hallway = findlocal('hallway2.wav')
+IR_computerlab = findlocal('computerlab3.wav')
 IR_presets = [IR_classroom, IR_hallway, IR_computerlab, 0]
 
 
